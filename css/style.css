@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&family=Roboto+Serif:wght@100&display=swap');
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
 html {
     height: 100%;
 }
@@ -28,7 +34,7 @@ body {
 
 #phamily__menu-text {
     margin: auto;
-    width: 50%;
+    width: 80%;
 }
 
 #phamily__menu h1 {
@@ -114,4 +120,23 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+#img-aquacolor{
+    z-index: -1;
+    position: absolute;
+    overflow:hidden;
+    left:-10rem;
+    width: 400%;
+    opacity: 65%;
+}
+
+#img-flowers{
+    z-index: -1;
+    position: absolute;
+    overflow: hidden;
+    width: 120%;
+    opacity: 65%;
+    top: -16rem;
+    left: -3rem;
 }
