@@ -1,21 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Wedding</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="phamily__menu">
+
     <h1 class="m-5 text-center">Menüauswahl</h1>
+
+
+
     <section id="phamily__menu-text" class="text-center mb-5">
         <p>Hallo Ihr Lieben, </p>
-        <p>Wir freuen uns, den Tag mit Euch zu feiern. Bitte wählt doch gerne aus, was Ihr an unserer Hochzeit essen möchtet.</p>
+        <p>Wir freuen uns, den Tag mit Euch zu feiern. Bitte wählt doch gerne aus, was Ihr an unserer Hochzeit essen
+            möchtet.</p>
     </section>
-    <form id="phamily__wedding-form">
-    </form>
 
+    <section id="phamily__wedding-form-section" class="p-3">
+        <form id="phamily__wedding-form" action="https://formsubmit.co/manhdungpham.de@gmail.com" method="POST">
+            <!--            Familienname-->
+            <div class="form-group mb-2">
+                <label for="familyName">Familie</label>
+                <input type="text" id="familyName" name="familyName" placeholder="Name">
+            </div>
+            <!--            Anzahl Personen-->
+            <div class="form-group mb-2">
+                <label class="switch" for="coming">
+                    <input type="checkbox" id="coming">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <hr>
+            <div id="person-form-wrapper"></div>
+            <button class="btn btn-primary" type="button" onclick="addPerson(this)">Person hinzufügen</button>
+            <button class="btn btn-primary" type="submit">SUBMIT</button>
+        </form>
+    </section>
 </div>
+<script type="text/javascript" src="js/wedding.js"></script>
 </body>
 </html>
