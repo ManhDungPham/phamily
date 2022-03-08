@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Wedding</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/wedding.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></head>
 <body>
 <div id="phamily__menu">
@@ -29,16 +29,15 @@
                 <input type="text" id="familyName" name="familyName" placeholder="Name">
             </div>
             <!--            Anzahl Personen-->
-            <div class="form-group mb-2">
-                <label class="switch" for="coming">
-                    <input type="checkbox" id="coming">
-                    <span class="slider round"></span>
-                </label>
+            <div class="form-group mb-2" style="display: flex; flex-direction: row;">
+                Wir kommen zur Hochzeit
+                    <input type="checkbox" id="toggle"/>
+                    <label id="phamily__toggle" for="toggle"></label>
             </div>
             <hr>
             <div id="person-form-wrapper"></div>
-            <button class="btn btn-primary" type="button" onclick="addPerson(this)">Person hinzufügen</button>
-            <button class="btn btn-primary" type="submit">SUBMIT</button>
+            <button class="btn btn-primary" type="button" onclick="addPerson(this)">+ Person</button>
+            <button class="btn btn-primary" type="submit">Absenden</button>
         </form>
     </section>
 </div>
