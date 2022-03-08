@@ -125,9 +125,9 @@ input:checked + .slider:before {
 #img-aquacolor{
     z-index: -1;
     position: absolute;
-    overflow:hidden;
-    left:-10rem;
-    width: 400%;
+    overflow: hidden;
+    left: -5rem;
+    width: 1000px;
     opacity: 65%;
 }
 
@@ -135,8 +135,10 @@ input:checked + .slider:before {
     z-index: -1;
     position: absolute;
     overflow: hidden;
-    width: 120%;
+    max-width: 581px;
+    min-width: 480px;
     opacity: 65%;
-    top: -16rem;
-    left: -3rem;
+    top: -21rem;
+    left: 50%;
+    transform: translate(-50%);
 }
