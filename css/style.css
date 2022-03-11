@@ -8,17 +8,15 @@ body {
     height: 100%;
     color: #3f3f3f;
     font-family: 'Roboto Mono', monospace !important;
-}
-
-#phamily__index-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 100%;
+    flex-direction: column;
 }
 
-#phamily__index-heading {
+
+.phamily__index-heading {
     color: #2a2a2a;
     letter-spacing: 10px;
 }

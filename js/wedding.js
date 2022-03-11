@@ -2,19 +2,43 @@
 
 let personCounter = 1;
 
+function ifComing(toggle) {
+    if (toggle.checked) {
+        document.getElementById("addPersonButton").style.display = "inline";
+        document.getElementById("deletePersonButton").style.display = "inline";
+        addPerson(document.getElementById("addPersonButton"));
+    } else {
+        document.getElementById("addPersonButton").style.display = "none";
+        document.getElementById("deletePersonButton").style.display = "none";
+        document.getElementById("person-form-wrapper").innerHTML = "";
+        personCounter = 1;
+    }
+}
+
 function addPerson(value) {
 
-    let newPersonForm = document.createElement('div');
-    newPersonForm.id="person" + personCounter;
-    newPersonForm.innerHTML = getNewPersonTemplate(personCounter);
+    if(personCounter <= 10 ){
+        let newPersonForm = document.createElement('div');
+        newPersonForm.id = "person" + personCounter;
+        newPersonForm.innerHTML = getNewPersonTemplate(personCounter);
 
-    personCounter++;
-    value.previousElementSibling.append(newPersonForm)
+        personCounter++;
+        value.previousElementSibling.append(newPersonForm)
+    }else {
+        alert('Sicher, dass eure Familie so groß ist?');
+    }
+
+}
+
+function deletePerson() {
+    let personFormWrapper = document.getElementById("person-form-wrapper");
+    personFormWrapper.removeChild(personFormWrapper.lastChild);
+    personCounter--;
 }
 
 function addMenu(value, objectCounter) {
     let newMenu = document.createElement('div')
-    newMenu.id="menuPerson" + objectCounter;
+    newMenu.id = "menuPerson" + objectCounter;
     newMenu.classList.add("menu-wrapper");
     let addMenuTemplate = ``;
 
@@ -33,9 +57,9 @@ function getNewPersonTemplate(personCounter) {
               <p>Person ${personCounter}</p>
               <div class="form-group mb-2">
                     <label for="forname">Vorname</label>
-                    <input type="text" id="forname" name="nameP${personCounter}" placeholder="Name">
+                    <input type="text" name="nameP${personCounter}" placeholder="Name">
                     <label for="age">Menüauswahl</label>
-                    <select class="form-select" id="age" onchange="addMenu(this, ${personCounter})">
+                    <select class="form-select" onchange="addMenu(this, ${personCounter})">
                         <option selected>Auswählen</option>
                         <option value="adult">Erwachsen</option>
                         <option value="child">Kind</option>
@@ -76,8 +100,8 @@ function getAdultMenuTemplate(currentCounter) {
                     </div>
                 </fieldset>
                 <div class="form-group mb-2" style="display: flex; flex-direction: row">
-                    <label for="exampleFormControlTextarea1" class="form-label">Folgende Allergien habe ich</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="allergiesP${currentCounter}" class="form-label">Folgende Allergien habe ich</label>
+                    <textarea class="form-control" name="allergiesP${currentCounter}" rows="3"></textarea>
                 </div>
             `;
 }
@@ -85,7 +109,7 @@ function getAdultMenuTemplate(currentCounter) {
 function getChildMenuTemplate(currentCounter) {
     return `<fieldset class="form-group">
                     <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                        <legend class="col-form-label col-sm-2 pt-0">Gericht</legend>
                         <div class="col-sm-10">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="person${currentCounter}"
@@ -105,8 +129,8 @@ function getChildMenuTemplate(currentCounter) {
                     </div>
                 </fieldset>
                 <div class="form-group mb-2" style="display: flex; flex-direction: row">
-                    <label for="exampleFormControlTextarea1" class="form-label">Folgende Allergien habe ich</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="allergiesP${currentCounter}" class="form-label">Folgende Allergien habe ich</label>
+                    <textarea class="form-control" name="allergiesP${currentCounter}" rows="3"></textarea>
                 </div>
             `;
 }

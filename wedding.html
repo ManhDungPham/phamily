@@ -23,6 +23,9 @@
 
     <section id="phamily__wedding-form-section" class="p-3 " style="z-index: 1">
         <form id="phamily__wedding-form" action="https://formsubmit.co/manhdungpham.de@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://manhdungpham.github.io/phamily/">
+            <input type="hidden" name="_captcha" value="false">
+
             <!--            Familienname-->
             <div class="form-group mb-2">
                 <label for="familyName">Familie</label>
@@ -31,12 +34,13 @@
             <!--            Anzahl Personen-->
             <div class="form-group mb-2" style="display: flex; flex-direction: row;">
                 Wir kommen zur Hochzeit
-                    <input type="checkbox" id="toggle"/>
+                    <input type="checkbox" name="coming" onchange="ifComing(this)" id="toggle"/>
                     <label id="phamily__toggle" for="toggle"></label>
             </div>
             <hr>
             <div id="person-form-wrapper"></div>
-            <button class="btn btn-primary" type="button" onclick="addPerson(this)">+ Person</button>
+            <button class="btn btn-primary" type="button" id="addPersonButton" onclick="addPerson(this)" style="display: none;">+</button>
+            <button class="btn btn-primary" type="button" id="deletePersonButton" onclick="deletePerson(this)" style="display: none;">-</button>
             <button class="btn btn-primary" type="submit">Absenden</button>
         </form>
     </section>
