@@ -4,7 +4,7 @@
     --font-color: #3f3f3f;
 }
 
-html{
+html {
     height: 100%;
 }
 
@@ -14,7 +14,7 @@ body {
     font-family: 'Roboto Mono', monospace !important;
 }
 
-#phamily__menu{
+#phamily__menu {
     overflow-x: hidden;
     position: relative;
     height: 100%;
@@ -47,8 +47,7 @@ body {
 }
 
 
-
-#img-aquacolor{
+#img-aquacolor {
     z-index: -1;
     position: absolute;
     left: -5rem;
@@ -56,7 +55,7 @@ body {
     opacity: 65%;
 }
 
-#img-flowers{
+#img-flowers {
     z-index: -1;
     position: absolute;
     overflow: hidden;
@@ -68,7 +67,7 @@ body {
     transform: translate(-50%);
 }
 
-.btn-primary{
+.btn-primary {
     color: #fff;
     background-color: #a1b599;
     border-color: #a1b599;
@@ -81,14 +80,27 @@ body {
     box-shadow: none;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     color: #fff;
     background-color: #b4c9a3;
     border-color: #b4c9a3;
 }
 
+.btn.btn-primary.phamily__wedding-form-submit-button {
+    display: block;
+    width: 100%;
+    background-color: #8a9981;
+    border-color: #8a9981;
+}
+
+.phamily__wedding-button-group{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
 /*Radio Buttons*/
-.phamily__wedding-form-radio-button label{
+.phamily__wedding-form-radio-button label {
     display: block;
     margin-bottom: 5px;
 }
@@ -103,6 +115,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
+}
+
+.menu-wrapper .radio-container {
+    grid-template-columns: 1fr;
 }
 
 .radio-container label {

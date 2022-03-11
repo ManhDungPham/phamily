@@ -28,7 +28,7 @@ function addPerson(value) {
         newPersonForm.id = "person" + personCounter;
         newPersonForm.innerHTML = getNewPersonTemplate(personCounter);
 
-        value.previousElementSibling.append(newPersonForm)
+        value.parentNode.previousElementSibling.append(newPersonForm)
         changeMenu(document.getElementById("adultMenuP" + personCounter), personCounter);
 
         personCounter++;
@@ -61,14 +61,15 @@ function changeMenu(value, objectCounter) {
 
 function getNewPersonTemplate(personCounter) {
     return `
-        <p>Person ${personCounter}</p>
+        <h5 class="text-center">Person ${personCounter}</h5>
         <div class="form-group mb-3">
-            <div class="form-floating mb-2">
+            <label for="forname">Vorname</label>
+            <div class="form-floating mt-2">
                 <input type="text" class="form-control" name="nameP${personCounter}" placeholder="Name" required>
                 <label for="forname">Vorname</label>
             </div>
         </div>
-        <div class='phamily__wedding-form-radio-button'>
+        <div class='phamily__wedding-form-radio-button mb-3'>
              <label for='adultMenuP${personCounter}'>Erwachsen/Kind</label>
              <div class='radio-container'>
                   <input checked='' id='adultMenuP${personCounter}' name='ageP${personCounter}' type='radio' onchange="changeMenu(this, ${personCounter})"
@@ -85,66 +86,50 @@ function getNewPersonTemplate(personCounter) {
 }
 
 function getAdultMenuTemplate(currentCounter) {
-    return `<fieldset class="form-group">
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Gericht</legend>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="person${currentCounter}"
-                                       value="ente" checked>
-                                <label class="form-check-label" for="gridRadios1">
-                                    Entenbrust
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="person${currentCounter}"
-                                       value="fisch">
-                                <label class="form-check-label" for="gridRadios2">
-                                    Fisch
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="person${currentCounter}"
-                                       value="vegan">
-                                <label class="form-check-label" for="gridRadios2">
-                                    Vegetarisch
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                <div class="form-group mb-2" style="display: flex; flex-direction: row">
-                    <label for="allergiesP${currentCounter}" class="form-label">Folgende Allergien habe ich</label>
-                    <textarea class="form-control" name="allergiesP${currentCounter}" rows="3"></textarea>
-                </div>
-            `;
+    return `
+        <div class='phamily__wedding-form-radio-button mb-3'>
+             <label for='meatMenuP${currentCounter}'>Menüauswahl</label>
+             <div class='radio-container'>
+                  <input checked='' id='meatMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
+                           value='Ente'>
+                  <label for='meatMenuP${currentCounter}'><i class="fa-solid fa-drumstick-bite fa-lg"></i> Ente</label>
+                  <input id='fishMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
+                           value='Fisch'>
+                  <label for='fishMenuP${currentCounter}'><i class="fa-solid fa-fish fa-lg"></i> Fisch</label>
+                  <input id='veganMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
+                           value='Vegan'>
+                  <label for='veganMenuP${currentCounter}'><i class="fa-solid fa-carrot fa-lg"></i> Vegetarisch</label>
+             </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="allergiesP${currentCounter}">Das kann ich nicht essen:</label>
+            <div class="form-floating mt-2">
+                <textarea class="form-control" name="allergiesP${currentCounter}" placeholder="Allergien" style="height: 80px;"></textarea>
+                <label for="allergiesP${currentCounter}">Allergien</label>
+            </div>
+        </div>
+        `;
 }
 
 function getChildMenuTemplate(currentCounter) {
-    return `<fieldset class="form-group">
-                    <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Gericht</legend>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="person${currentCounter}"
-                                       value="schnitzelMitPommes" checked>
-                                <label class="form-check-label" for="gridRadios1">
-                                    Schnitzel mit Pommes
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="person${currentCounter}"
-                                       value="spaetzleMitSoße">
-                                <label class="form-check-label" for="gridRadios2">
-                                    Spätzle mit Soße
-                                </label>
-                            </div>
-                        </div>
+    return `
+                <div class='phamily__wedding-form-radio-button mb-3'>
+                     <label for='schnitzelMenuP${currentCounter}'>Menüauswahl</label>
+                     <div class='radio-container'>
+                          <input checked='' id='schnitzelMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
+                                   value='Schnitzel mit Pommes'>
+                          <label for='schnitzelMenuP${currentCounter}'><i class="fa-solid fa-utensils"></i> Schnitzel mit Pommes</label>
+                          <input id='spatzleMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
+                                   value='Spatzle mit Sosse'>
+                          <label for='spatzleMenuP${currentCounter}'><i class="fa-solid fa-utensils"></i> Spätzle mit Soße</label>
+                     </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="allergiesP${currentCounter}">Das kann ich nicht essen:</label>
+                    <div class="form-floating mt-2">
+                        <textarea class="form-control" name="allergiesP${currentCounter}" placeholder="Allergien" style="height: 80px;"></textarea>
+                        <label for="allergiesP${currentCounter}">Allergien</label>
                     </div>
-                </fieldset>
-                <div class="form-group mb-2" style="display: flex; flex-direction: row">
-                    <label for="allergiesP${currentCounter}" class="form-label">Folgende Allergien habe ich</label>
-                    <textarea class="form-control" name="allergiesP${currentCounter}" rows="3"></textarea>
                 </div>
             `;
 }

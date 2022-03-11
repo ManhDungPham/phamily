@@ -40,7 +40,7 @@
                 </div>
             </div>
             <!--            Anwesend oder nicht-->
-            <div class='phamily__wedding-form-radio-button'>
+            <div class='phamily__wedding-form-radio-button mb-3'>
                 <label for='accept-invitation'>Wir kommen zur Hochzeit</label>
                 <div class='radio-container'>
                     <input id='accept-invitation' name='accept-invitation' type='radio' onchange="ifComing(this)"
@@ -55,13 +55,17 @@
             <hr>
 
             <div id="person-form-wrapper"></div>
-            <button class="btn btn-primary" type="button" id="addPersonButton" onclick="addPerson(this)"
-                    style="display: none;">+
-            </button>
-            <button class="btn btn-primary" type="button" id="deletePersonButton" onclick="deletePerson(this)"
-                    style="display: none;">-
-            </button>
-            <button class="btn btn-primary" type="submit">Absenden</button>
+
+            <div class="phamily__wedding-button-group">
+                <button class="btn btn-primary m-1" type="button" id="addPersonButton" onclick="addPerson(this)"
+                        style="display: none;">+ Person
+                </button>
+                <button class="btn btn-primary m-1" type="button" id="deletePersonButton" onclick="deletePerson(this)"
+                        style="display: none;">-
+                </button>
+            </div>
+
+            <button class="btn btn-primary phamily__wedding-form-submit-button mt-2" type="submit">Absenden</button>
         </form>
     </section>
 </div>
