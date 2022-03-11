@@ -69,14 +69,14 @@ function getNewPersonTemplate(personCounter) {
             </div>
         </div>
         <div class='phamily__wedding-form-radio-button'>
-             <label for='adultMenuP${personCounter}'>Menüauswahl</label>
+             <label for='adultMenuP${personCounter}'>Erwachsen/Kind</label>
              <div class='radio-container'>
                   <input checked='' id='adultMenuP${personCounter}' name='ageP${personCounter}' type='radio' onchange="changeMenu(this, ${personCounter})"
                            value='adult'>
-                  <label for='adultMenuP${personCounter}'>Erwachsen</label>
+                  <label for='adultMenuP${personCounter}'><i class="fa-solid fa-person fa-xl"></i></label>
                   <input id='childMenuP${personCounter}' name='ageP${personCounter}' type='radio'
                            onchange="changeMenu(this, ${personCounter})" value='child'>
-                  <label for='childMenuP${personCounter}'>Kind</label>
+                  <label for='childMenuP${personCounter}'><i class="fa-solid fa-baby fa-xl"></i></label>
              </div>
         </div>
         <div class="menu-placeholder"></div>
