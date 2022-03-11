@@ -1,18 +1,18 @@
 'use strict';
 
 let personCounter = 1;
-const thankYouPage=  "https://manhdungpham.github.io/phamily/thankYou";
-const declinePage=  "https://manhdungpham.github.io/phamily/decline";
+const thankYouPage = "https://manhdungpham.github.io/phamily/thankYou";
+const declinePage = "https://manhdungpham.github.io/phamily/decline";
 
 
 function ifComing(toggle) {
     if (toggle.checked) {
-        document.getElementById("phamily__wedding-form-redirect").value= thankYouPage;
+        document.getElementById("phamily__wedding-form-redirect").value = thankYouPage;
         document.getElementById("addPersonButton").style.display = "inline";
         document.getElementById("deletePersonButton").style.display = "inline";
         addPerson(document.getElementById("addPersonButton"));
     } else {
-        document.getElementById("phamily__wedding-form-redirect").value= declinePage;
+        document.getElementById("phamily__wedding-form-redirect").value = declinePage;
         document.getElementById("addPersonButton").style.display = "none";
         document.getElementById("deletePersonButton").style.display = "none";
         document.getElementById("person-form-wrapper").innerHTML = "";
@@ -22,14 +22,14 @@ function ifComing(toggle) {
 
 function addPerson(value) {
 
-    if(personCounter <= 10 ){
+    if (personCounter <= 10) {
         let newPersonForm = document.createElement('div');
         newPersonForm.id = "person" + personCounter;
         newPersonForm.innerHTML = getNewPersonTemplate(personCounter);
 
         personCounter++;
         value.previousElementSibling.append(newPersonForm)
-    }else {
+    } else {
         alert('Sicher, dass eure Familie so groß ist?');
     }
 

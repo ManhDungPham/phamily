@@ -5,7 +5,8 @@
     <title>Wedding</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/wedding.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
 <body>
 <div id="phamily__menu">
 
@@ -23,24 +24,36 @@
 
     <section id="phamily__wedding-form-section" class="p-3 " style="z-index: 1">
         <form id="phamily__wedding-form" action="https://formsubmit.co/manhdungpham.de@gmail.com" method="POST">
-            <input type="hidden" name="_next" id="phamily__wedding-form-redirect" value="https://manhdungpham.github.io/phamily/decline">
+
+            <!--            Configuration-->
+            <input type="hidden" name="_next" id="phamily__wedding-form-redirect"
+                   value="https://manhdungpham.github.io/phamily/decline">
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_cc" value="juliakrueger.de@gmail.com">
 
             <!--            Familienname-->
-            <div class="form-group mb-2">
-                <label for="familyName">Familie</label>
-                <input type="text" id="familyName" name="familyName" placeholder="Name">
+            <div class="form-group mb-3">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="familyName" name="familyName" placeholder="Name">
+                    <label for="familyName">Familie</label>
+                </div>
             </div>
             <!--            Anzahl Personen-->
             <div class="form-group mb-2" style="display: flex; flex-direction: row;">
                 Wir kommen zur Hochzeit
-                    <input type="checkbox" name="coming" onchange="ifComing(this)" id="toggle"/>
-                    <label id="phamily__toggle" for="toggle"></label>
+                <input type="checkbox" name="coming" onchange="ifComing(this)" id="toggle"/>
+                <label id="phamily__toggle" for="toggle"></label>
             </div>
+
             <hr>
+
             <div id="person-form-wrapper"></div>
-            <button class="btn btn-primary" type="button" id="addPersonButton" onclick="addPerson(this)" style="display: none;">+</button>
-            <button class="btn btn-primary" type="button" id="deletePersonButton" onclick="deletePerson(this)" style="display: none;">-</button>
+            <button class="btn btn-primary" type="button" id="addPersonButton" onclick="addPerson(this)"
+                    style="display: none;">+
+            </button>
+            <button class="btn btn-primary" type="button" id="deletePersonButton" onclick="deletePerson(this)"
+                    style="display: none;">-
+            </button>
             <button class="btn btn-primary" type="submit">Absenden</button>
         </form>
     </section>
