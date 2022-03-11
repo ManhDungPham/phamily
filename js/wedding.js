@@ -6,7 +6,8 @@ const declinePage = "https://manhdungpham.github.io/phamily/decline";
 
 
 function ifComing(toggle) {
-    if (toggle.checked) {
+
+    if (toggle.value === "true") {
         document.getElementById("phamily__wedding-form-redirect").value = thankYouPage;
         document.getElementById("addPersonButton").style.display = "inline";
         document.getElementById("deletePersonButton").style.display = "inline";
@@ -27,12 +28,13 @@ function addPerson(value) {
         newPersonForm.id = "person" + personCounter;
         newPersonForm.innerHTML = getNewPersonTemplate(personCounter);
 
-        personCounter++;
         value.previousElementSibling.append(newPersonForm)
+        changeMenu(document.getElementById("adultMenuP" + personCounter), personCounter);
+
+        personCounter++;
     } else {
         alert('Sicher, dass eure Familie so groß ist?');
     }
-
 }
 
 function deletePerson() {
@@ -41,37 +43,44 @@ function deletePerson() {
     personCounter--;
 }
 
-function addMenu(value, objectCounter) {
+function changeMenu(value, objectCounter) {
     let newMenu = document.createElement('div')
     newMenu.id = "menuPerson" + objectCounter;
     newMenu.classList.add("menu-wrapper");
-    let addMenuTemplate = ``;
+    let changeMenuTemplate = ``;
 
     if (value.value === "adult") {
-        addMenuTemplate = getAdultMenuTemplate(objectCounter);
-    } else {
-        addMenuTemplate = getChildMenuTemplate(objectCounter);
+        changeMenuTemplate = getAdultMenuTemplate(objectCounter);
+    } else if (value.value === "child") {
+        changeMenuTemplate = getChildMenuTemplate(objectCounter);
     }
 
-    newMenu.innerHTML = addMenuTemplate;
-    value.parentNode.parentNode.lastElementChild.previousElementSibling.replaceWith(newMenu)
+    newMenu.innerHTML = changeMenuTemplate;
+    value.parentNode.parentNode.parentNode.lastElementChild.previousElementSibling.replaceWith(newMenu)
 }
 
 function getNewPersonTemplate(personCounter) {
     return `
-              <p>Person ${personCounter}</p>
-              <div class="form-group mb-2">
-                    <label for="forname">Vorname</label>
-                    <input type="text" name="nameP${personCounter}" placeholder="Name">
-                    <label for="age">Menüauswahl</label>
-                    <select class="form-select" onchange="addMenu(this, ${personCounter})">
-                        <option selected>Auswählen</option>
-                        <option value="adult">Erwachsen</option>
-                        <option value="child">Kind</option>
-                    </select>
-              </div>
-              <div class="menu-placeholder"></div>
-              <hr>
+        <p>Person ${personCounter}</p>
+        <div class="form-group mb-3">
+            <div class="form-floating mb-2">
+                <input type="text" class="form-control" name="nameP${personCounter}" placeholder="Name" required>
+                <label for="forname">Vorname</label>
+            </div>
+        </div>
+        <div class='phamily__wedding-form-radio-button'>
+             <label for='adultMenuP${personCounter}'>Menüauswahl</label>
+             <div class='radio-container'>
+                  <input checked='' id='adultMenuP${personCounter}' name='ageP${personCounter}' type='radio' onchange="changeMenu(this, ${personCounter})"
+                           value='adult'>
+                  <label for='adultMenuP${personCounter}'>Erwachsen</label>
+                  <input id='childMenuP${personCounter}' name='ageP${personCounter}' type='radio'
+                           onchange="changeMenu(this, ${personCounter})" value='child'>
+                  <label for='childMenuP${personCounter}'>Kind</label>
+             </div>
+        </div>
+        <div class="menu-placeholder"></div>
+        <hr>
     `
 }
 

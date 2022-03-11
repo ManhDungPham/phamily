@@ -47,64 +47,6 @@ body {
 }
 
 
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* The slider */
-*,
-*:after,
-*:before {
-    box-sizing: border-box;
-}
-
-
-input[type=checkbox] {
-    visibility: hidden;
-}
-input[type=checkbox]:checked + #phamily__toggle {
-    background-color: var(--font-color);
-}
-input[type=checkbox]:checked + #phamily__toggle:before {
-    transform: translateX(24px);
-    background-color: #fff;
-}
-
-#phamily__toggle {
-    display: flex;
-    width: 3rem;
-    height: 1.5rem;
-    border: 2px solid;
-    border-radius: 99em;
-    position: relative;
-    background-color: white;
-    transition: transform 0.25s ease-in-out;
-    transform-origin: 50% 50%;
-    cursor: pointer;
-}
-#phamily__toggle:before {
-    transition: transform 0.25s ease;
-    content: "";
-    display: block;
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--font-color);
-    border-radius: 50%;
-    top: 2px;
-    left: 2px;
-}
 
 #img-aquacolor{
     z-index: -1;
@@ -143,4 +85,47 @@ input[type=checkbox]:checked + #phamily__toggle:before {
     color: #fff;
     background-color: #b4c9a3;
     border-color: #b4c9a3;
+}
+
+/*Radio Buttons*/
+.phamily__wedding-form-radio-button label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.radio-container {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: grid;
+    padding: 5px;
+    max-width: 334px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.radio-container label {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    display: inline-block;
+    height: 37px;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: 0.2s all ease-in-out;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.radio-container input[type=radio] {
+    display: none;
+}
+
+.radio-container input[type=radio]:checked + label {
+    background: #b4c9a3;
+    border: 1px solid rgb(180, 201, 163);
 }
