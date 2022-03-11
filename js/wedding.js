@@ -61,9 +61,9 @@ function changeMenu(value, objectCounter) {
 
 function getNewPersonTemplate(personCounter) {
     return `
-        <h5 class="text-center">Person ${personCounter}</h5>
-        <div class="form-group mb-3">
-            <label for="forname">Vorname</label>
+        <p class="h5 text-center">Person ${personCounter}</p>
+        <div class="form-group text-center mb-3">
+            <label for="forname" class="">Vorname</label>
             <div class="form-floating mt-2">
                 <input type="text" class="form-control" name="nameP${personCounter}" placeholder="Name" required>
                 <label for="forname">Vorname</label>

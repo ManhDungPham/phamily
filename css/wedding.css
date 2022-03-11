@@ -2,7 +2,12 @@
 
 :root {
     --font-color: #3f3f3f;
+    --input-green-color: #b4c9a3;
+    --button-green-color: #a1b599;
+    --submit-green-color: #8a9981;
 }
+
+/*standard config*/
 
 html {
     height: 100%;
@@ -32,13 +37,12 @@ body {
 #phamily__wedding-form-section {
     margin: auto;
     max-width: 100%;
-    /* border-color: black; */
-    /* border-radius: 2em; */
-    /* height: 812px; */
-    /* -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625); */
-    /* box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625); */
-    /* overflow: auto; */
-    /* padding: 2em; */
+}
+
+@media screen and (min-width: 750px) {
+    #phamily__wedding-form-section {
+        max-width: 1000px;
+    }
 }
 
 #phamily__wedding-form {
@@ -46,7 +50,7 @@ body {
     width: 80%;
 }
 
-
+/*images*/
 #img-aquacolor {
     z-index: -1;
     position: absolute;
@@ -67,51 +71,63 @@ body {
     transform: translate(-50%);
 }
 
+/*button layout*/
+
 .btn-primary {
-    color: #fff;
-    background-color: #a1b599;
-    border-color: #a1b599;
+    color: white;
+    background-color: var(--button-green-color);
+    border-color: var(--button-green-color);
 }
 
 .btn-check:focus + .btn-primary, .btn-primary:focus {
-    color: #fff;
-    background-color: #a1b599;
-    border-color: #a1b599;
+    color: white;
+    background-color: var(--button-green-color);
+    border-color: var(--button-green-color);
     box-shadow: none;
 }
 
 .btn-primary:hover {
-    color: #fff;
-    background-color: #b4c9a3;
-    border-color: #b4c9a3;
+    color: white;
+    background-color: var(--input-green-color);
+    border-color: var(--input-green-color);
 }
 
 .btn.btn-primary.phamily__wedding-form-submit-button {
     display: block;
     width: 100%;
-    background-color: #8a9981;
-    border-color: #8a9981;
+    background-color: var(--submit-green-color);
+    border-color: var(--submit-green-color);
 }
 
-.phamily__wedding-button-group{
+.phamily__wedding-button-group {
     align-items: center;
     display: flex;
     justify-content: center;
 }
 
 /*Radio Buttons*/
+.phamily__wedding-form-radio-button {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .phamily__wedding-form-radio-button label {
-    display: block;
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .radio-container {
-    background: #fff;
+    background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     display: grid;
     padding: 5px;
-    max-width: 334px;
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
@@ -142,6 +158,6 @@ body {
 }
 
 .radio-container input[type=radio]:checked + label {
-    background: #b4c9a3;
-    border: 1px solid rgb(180, 201, 163);
+    background: var(--input-green-color);
+    border: 1px solid var(--input-green-color);
 }
