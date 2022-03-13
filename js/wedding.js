@@ -114,9 +114,12 @@ function getAdultMenuTemplate(currentCounter) {
 function getChildMenuTemplate(currentCounter) {
     return `
                 <div class='phamily__wedding-form-radio-button mb-3'>
-                     <label for='schnitzelMenuP${currentCounter}'>Menüauswahl</label>
+                     <label for='keinMenuP${currentCounter}'>Menüauswahl</label>
                      <div class='radio-container'>
-                          <input checked='' id='schnitzelMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
+                          <input checked='' id='keinMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
+                                   value='Kein Esssen'>
+                          <label for='keinMenuP${currentCounter}'><i class="fa-solid fa-ban"></i> Kein Essen nötig</label>
+                          <input id='schnitzelMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
                                    value='Schnitzel mit Pommes'>
                           <label for='schnitzelMenuP${currentCounter}'><i class="fa-solid fa-utensils"></i> Schnitzel mit Pommes</label>
                           <input id='spatzleMenuP${currentCounter}' name='menuP${currentCounter}' type='radio'
