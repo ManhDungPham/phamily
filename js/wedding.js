@@ -9,11 +9,13 @@ function ifComing(toggle) {
 
     if (toggle.value === "true") {
         document.getElementById("phamily__wedding-form-redirect").value = thankYouPage;
+        document.getElementById("email-formgroup").style.display = "inline";
         document.getElementById("addPersonButton").style.display = "inline";
         document.getElementById("deletePersonButton").style.display = "inline";
         addPerson(document.getElementById("addPersonButton"));
     } else {
         document.getElementById("phamily__wedding-form-redirect").value = declinePage;
+        document.getElementById("email-formgroup").style.display = "none";
         document.getElementById("addPersonButton").style.display = "none";
         document.getElementById("deletePersonButton").style.display = "none";
         document.getElementById("person-form-wrapper").innerHTML = "";

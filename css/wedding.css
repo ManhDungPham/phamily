@@ -101,8 +101,28 @@ body {
 
 .phamily__wedding-button-group {
     align-items: center;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+            'email email'
+            'addPersonButton deletePersonButton';
+}
+
+#email-formgroup{
+    grid-area: email;
+    display: none;
+}
+
+#addPersonButton{
+    grid-area: addPersonButton;
+    justify-self: end;
+    width: 120px;
+}
+
+#deletePersonButton{
+    grid-area: deletePersonButton;
+    justify-self: start;
+    width: 120px;
 }
 
 /*Radio Buttons*/

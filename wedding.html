@@ -18,8 +18,8 @@
 
     <section id="phamily__menu-text" class="text-center mb-5" style="z-index: 1">
         <p>Hallo Ihr Lieben, </p>
-        <p>Wir freuen uns, den Tag mit Euch zu feiern. Bitte wählt doch gerne aus, was Ihr an unserer Hochzeit essen
-            möchtet.</p>
+        <p>wir freuen uns, den Tag mit Euch zu feiern. Bitte wählt doch gerne aus, was Ihr an unserer Hochzeit essen
+            möchtet. Gerne könnt Ihr auch eine E-Mail Adresse hinterlassen, um nach der Hochzeit die Bilder zu erhalten.</p>
     </section>
 
     <section id="phamily__wedding-form-section" class="p-3 " style="z-index: 1">
@@ -60,6 +60,13 @@
             <div id="person-form-wrapper"></div>
 
             <div class="phamily__wedding-button-group">
+                <div class="form-group mb-3 text-center" id="email-formgroup">
+                    <label for="email">E-Mail für Hochzeitsbilder</label>
+                    <div class="form-floating mt-2">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="mail@example.com">
+                        <label for="email">E-Mail</label>
+                    </div>
+                </div>
                 <button class="btn btn-primary m-1" type="button" id="addPersonButton" onclick="addPerson(this)"
                         style="display: none;">+ Person
                 </button>
