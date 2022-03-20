@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&family=Roboto+Serif:wght@100&display=swap');
 @font-face {
     font-family: 'rustlingSound';
-    src: URL('/fonts/RustlingSound.ttf') format('truetype');
+    src: URL('fonts/RustlingSound.ttf') format('truetype');
 }
 
 :root {
