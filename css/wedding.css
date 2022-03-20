@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&family=Roboto+Serif:wght@100&display=swap');
+@font-face {
+    font-family: 'rustlingSound';
+    src: URL('/fonts/RustlingSound.ttf') format('truetype');
+}
 
 :root {
     --font-color: #3f3f3f;
@@ -31,7 +35,8 @@ body {
 }
 
 #phamily__menu h1 {
-    letter-spacing: 10px;
+    font-family: 'rustlingSound', monospace !important;
+    font-size: 3rem;
 }
 
 #phamily__wedding-form-section {
@@ -40,6 +45,10 @@ body {
 }
 
 @media screen and (min-width: 750px) {
+    #phamily__menu-text{
+        max-width: 1000px;
+    }
+
     #phamily__wedding-form-section {
         max-width: 1000px;
     }
@@ -102,27 +111,25 @@ body {
 .phamily__wedding-button-group {
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-            'email email'
-            'addPersonButton deletePersonButton';
+    grid-template-columns: 50% 50%;
+    max-width: 100%;
+    width: 100%;
 }
 
 #email-formgroup{
-    grid-area: email;
     display: none;
 }
 
 #addPersonButton{
-    grid-area: addPersonButton;
     justify-self: end;
     width: 120px;
+    max-width: 100%;
 }
 
 #deletePersonButton{
-    grid-area: deletePersonButton;
     justify-self: start;
     width: 120px;
+    max-width: 100%;
 }
 
 /*Radio Buttons*/
