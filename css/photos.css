@@ -19,9 +19,14 @@ body {
 #phamily-photo main {
     display: grid;
     justify-content: center;
-    align-items: center;
     grid-template-columns: 16rem;
-    gap: 2em 1em;
+    gap: 2em 2em;
+}
+
+@media screen and (min-width: 750px) {
+    #phamily-photo main {
+        grid-template-columns: 16rem 16rem;
+    }
 }
 
 #img-aquacolor {
