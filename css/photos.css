@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&family=Roboto+Serif:wght@100&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    color: var(--font-color);
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+#phamily-photo {
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+}
+
+#phamily-photo main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 16rem;
+    gap: 2em 1em;
+}
+
+#img-aquacolor {
+    z-index: -1;
+    position: absolute;
+    left: -5rem;
+    width: 1650px;
+    opacity: 65%;
+}
+
+.phamily__index-heading {
+    color: #2a2a2a;
+    letter-spacing: 7px;
+}
+
+.phamily-photo__wrapper {
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.phamily-photo__image-wrapper {
+    height: 10rem;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.phamily-photo__image-wrapper img {
+    width: 100%;
+}
+
+.phamily-photo__wrapper-title {
+    color: #2a2a2a;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.phamily-photo__wrapper-subtitle {
+    color: #898989;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    font-size: 0.7rem;
+}
